@@ -6,6 +6,8 @@ public class Vin {
 
     private String nom;
     private Integer annee;
+    private Integer vieillissement;
+    private String type;
     private String region;
     private String commentaire;
 
@@ -42,6 +44,22 @@ public class Vin {
 
     public void setCommentaire(String commentaire) {
         this.commentaire = commentaire;
+    }
+
+    public Integer getVieillissement() {
+        return vieillissement;
+    }
+
+    public void setVieillissement(Integer vieillissement) {
+        this.vieillissement = vieillissement;
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public void setType(String type) {
+        this.type = type;
     }
 
     @Override

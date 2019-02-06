@@ -69,13 +69,15 @@ public class Vin {
         Vin vin = (Vin) o;
         return Objects.equals(nom, vin.nom) &&
                 Objects.equals(annee, vin.annee) &&
+                Objects.equals(vieillissement, vin.vieillissement) &&
+                Objects.equals(type, vin.type) &&
                 Objects.equals(region, vin.region) &&
                 Objects.equals(commentaire, vin.commentaire);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nom, annee, region, commentaire);
+        return Objects.hash(nom, annee, vieillissement, type, region, commentaire);
     }
 
     @Override
@@ -83,6 +85,8 @@ public class Vin {
         return "Vin{" +
                 "nom='" + nom + '\'' +
                 ", annee=" + annee +
+                ", vieillissement=" + vieillissement +
+                ", type='" + type + '\'' +
                 ", region='" + region + '\'' +
                 ", commentaire='" + commentaire + '\'' +
                 '}';

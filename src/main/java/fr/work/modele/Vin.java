@@ -19,7 +19,7 @@ public class Vin {
     }
 
     public Vin(Integer id){
-        this id = id;
+        this.id = id;
     }
 
     public Integer getId() {

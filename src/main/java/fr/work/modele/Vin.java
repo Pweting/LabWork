@@ -86,17 +86,37 @@ public class Vin {
         this.plat = plat;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Vin vin = (Vin) o;
+        return id.equals(vin.id) &&
+                Objects.equals(nom, vin.nom) &&
+                Objects.equals(annee, vin.annee) &&
+                Objects.equals(vieillissement, vin.vieillissement) &&
+                Objects.equals(type, vin.type) &&
+                Objects.equals(region, vin.region) &&
+                Objects.equals(commentaire, vin.commentaire) &&
+                Objects.equals(plat, vin.plat);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, nom, annee, vieillissement, type, region, commentaire, plat);
+    }
 
     @Override
     public String toString() {
         return "Vin{" +
-                "nom='" + nom + '\'' +
+                "id=" + id +
+                ", nom='" + nom + '\'' +
                 ", annee=" + annee +
                 ", vieillissement=" + vieillissement +
                 ", type='" + type + '\'' +
                 ", region='" + region + '\'' +
                 ", commentaire='" + commentaire + '\'' +
+                ", plat='" + plat + '\'' +
                 '}';
     }
 }

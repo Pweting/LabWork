@@ -1,17 +1,33 @@
 package fr.work.modele;
 
+import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
+
 import java.util.Objects;
 
 public class Vin {
 
+    private Integer id;
     private String nom;
     private Integer annee;
     private Integer vieillissement;
     private String type;
     private String region;
     private String commentaire;
+    private String plat;
 
     public Vin() {
+    }
+
+    public Vin(Integer id){
+        this id = id;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNom() {
@@ -62,23 +78,15 @@ public class Vin {
         this.type = type;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Vin vin = (Vin) o;
-        return Objects.equals(nom, vin.nom) &&
-                Objects.equals(annee, vin.annee) &&
-                Objects.equals(vieillissement, vin.vieillissement) &&
-                Objects.equals(type, vin.type) &&
-                Objects.equals(region, vin.region) &&
-                Objects.equals(commentaire, vin.commentaire);
+    public String getPlat() {
+        return plat;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(nom, annee, vieillissement, type, region, commentaire);
+    public void setPlat(String plat) {
+        this.plat = plat;
     }
+
+
 
     @Override
     public String toString() {

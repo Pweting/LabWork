@@ -1,6 +1,6 @@
-package fr.work.repository;
+package fr.work.lab.repository;
 
-import fr.work.modele.Vin;
+import fr.work.lab.modele.Vin;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface vinRepository extends JpaRepository<Vin, Integer> {

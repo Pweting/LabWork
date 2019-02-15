@@ -1,7 +1,7 @@
-package fr.work.resController;
+package fr.work.lab.resController;
 
-import fr.work.modele.Vin;
-import fr.work.repository.vinRepository;
+import fr.work.lab.modele.Vin;
+import fr.work.lab.repository.vinRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

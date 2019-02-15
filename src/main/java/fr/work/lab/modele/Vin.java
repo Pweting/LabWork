@@ -1,4 +1,4 @@
-package fr.work.modele;
+package fr.work.lab.modele;
 
 import javax.persistence.*;
 import java.util.Objects;

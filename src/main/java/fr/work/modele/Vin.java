@@ -1,12 +1,16 @@
 package fr.work.modele;
 
-import net.bytebuddy.implementation.bytecode.assign.TypeCasting;
-
+import javax.persistence.*;
 import java.util.Objects;
 
+@Entity
 public class Vin {
 
+    @Id
+    @SequenceGenerator(name = "vinSeq", sequenceName = "vin_seq", allocationSize = 1)
+    @GeneratedValue(generator = "vinSeq", strategy = GenerationType.SEQUENCE)
     private Integer id;
+
     private String nom;
     private Integer annee;
     private Integer vieillissement;
@@ -18,7 +22,7 @@ public class Vin {
     public Vin() {
     }
 
-    public Vin(Integer id){
+    public Vin(Integer id) {
         this.id = id;
     }
 

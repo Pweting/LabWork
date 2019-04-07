@@ -13,11 +13,14 @@ public class Vin {
 
     private String nom;
     private Integer annee;
-    private Integer vieillissement;
+    private Integer consommation;
     private String type;
     private String region;
+    private String domaine;
     private String commentaire;
     private String plat;
+    private Integer premium;
+    private boolean bu;
 
     public Vin() {
     }
@@ -66,12 +69,12 @@ public class Vin {
         this.commentaire = commentaire;
     }
 
-    public Integer getVieillissement() {
-        return vieillissement;
+    public Integer getConsommation() {
+        return consommation;
     }
 
-    public void setVieillissement(Integer vieillissement) {
-        this.vieillissement = vieillissement;
+    public void setConsommation(Integer consommation) {
+        this.consommation = consommation;
     }
 
     public String getType() {
@@ -90,24 +93,51 @@ public class Vin {
         this.plat = plat;
     }
 
+    public String getDomaine() {
+        return domaine;
+    }
+
+    public void setDomaine(String domaine) {
+        this.domaine = domaine;
+    }
+
+    public Integer getPremium() {
+        return premium;
+    }
+
+    public void setPremium(Integer premium) {
+        this.premium = premium;
+    }
+
+    public boolean isBu() {
+        return bu;
+    }
+
+    public void setBu(boolean bu) {
+        this.bu = bu;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Vin vin = (Vin) o;
-        return id.equals(vin.id) &&
+        return bu == vin.bu &&
+                Objects.equals(id, vin.id) &&
                 Objects.equals(nom, vin.nom) &&
                 Objects.equals(annee, vin.annee) &&
-                Objects.equals(vieillissement, vin.vieillissement) &&
+                Objects.equals(consommation, vin.consommation) &&
                 Objects.equals(type, vin.type) &&
                 Objects.equals(region, vin.region) &&
+                Objects.equals(domaine, vin.domaine) &&
                 Objects.equals(commentaire, vin.commentaire) &&
-                Objects.equals(plat, vin.plat);
+                Objects.equals(plat, vin.plat) &&
+                Objects.equals(premium, vin.premium);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, nom, annee, vieillissement, type, region, commentaire, plat);
+        return Objects.hash(id, nom, annee, consommation, type, region, domaine, commentaire, plat, premium, bu);
     }
 
     @Override
@@ -116,11 +146,14 @@ public class Vin {
                 "id=" + id +
                 ", nom='" + nom + '\'' +
                 ", annee=" + annee +
-                ", vieillissement=" + vieillissement +
+                ", consommation=" + consommation +
                 ", type='" + type + '\'' +
                 ", region='" + region + '\'' +
+                ", domaine='" + domaine + '\'' +
                 ", commentaire='" + commentaire + '\'' +
                 ", plat='" + plat + '\'' +
+                ", premium=" + premium +
+                ", bu=" + bu +
                 '}';
     }
 }
